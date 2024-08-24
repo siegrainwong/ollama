@@ -584,7 +584,7 @@ func (s *llmServer) Ping(ctx context.Context) error {
 
 func (s *llmServer) WaitUntilRunning(ctx context.Context) error {
 	start := time.Now()
-	stallDuration := 5 * time.Minute            // If no progress happens
+	stallDuration := 50 * time.Minute            // If no progress happens
 	finalLoadDuration := 5 * time.Minute        // After we hit 100%, give the runner more time to come online
 	stallTimer := time.Now().Add(stallDuration) // give up if we stall
 
