@@ -9,11 +9,12 @@ export GOFLAGS="'-ldflags=-w -s \"-X=github.com/ollama/ollama/version.Version=$V
 # (The ROCm image is x86 only and is not a multiarch manifest)
 # For developers, you can override the DOCKER_ORG to generate multiarch manifests
 #  DOCKER_ORG=jdoe PUSH=1 ./scripts/build_docker.sh
-DOCKER_ORG=${DOCKER_ORG:-"ollama"}
+DOCKER_ORG=${DOCKER_ORG:-"siegrainwong"}
 RELEASE_IMAGE_REPO=${RELEASE_IMAGE_REPO:-"${DOCKER_ORG}/release"}
 FINAL_IMAGE_REPO=${FINAL_IMAGE_REPO:-"${DOCKER_ORG}/ollama"}
 
-BUILD_ARCH=${BUILD_ARCH:-"amd64 arm64"}
+# BUILD_ARCH=${BUILD_ARCH:-"amd64 arm64"}
+BUILD_ARCH=${BUILD_ARCH:-"amd64"}
 
 # Set PUSH to a non-empty string to trigger push instead of load
 PUSH=${PUSH:-""}

@@ -3031,8 +3031,9 @@ int main(int argc, char **argv) {
             });
 
     // load the model
-    params.progress_callback = update_load_progress;
-    params.progress_callback_user_data = (void*)&llama;
+    // SG-FIXME
+    // params.progress_callback = update_load_progress;
+    // params.progress_callback_user_data = (void*)&llama;
 
     if (!llama.load_model(params))
     {

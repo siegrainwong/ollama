@@ -75,12 +75,15 @@ apply_patches() {
         # apply temporary patches until fix is upstream
         for patch in ../patches/*.diff; do
             for file in $(grep "^+++ " ${patch} | cut -f2 -d' ' | cut -f2- -d/); do
+                file=$(echo "$file" | tr -d '\r')
                 (cd ${LLAMACPP_DIR}; git checkout ${file})
             done
         done
-        for patch in ../patches/*.diff; do
-            (cd ${LLAMACPP_DIR} && git apply ${patch})
-        done
+        # SG-FIXME
+        # for patch in ../patches/*.diff; do
+        #     patch=$(echo "$patch" | tr -d '\r')
+        #     (cd ${LLAMACPP_DIR} && git apply ${patch})
+        # done
     fi
 }
 
@@ -128,6 +131,7 @@ cleanup() {
     if [ -n "$(ls -A ../patches/*.diff)" ]; then
         for patch in ../patches/*.diff; do
             for file in $(grep "^+++ " ${patch} | cut -f2 -d' ' | cut -f2- -d/); do
+                file=$(echo "$file" | tr -d '\r')
                 (cd ${LLAMACPP_DIR}; git checkout ${file})
             done
         done
