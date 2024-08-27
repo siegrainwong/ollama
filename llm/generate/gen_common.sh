@@ -80,10 +80,10 @@ apply_patches() {
             done
         done
         # SG-FIXME
-        # for patch in ../patches/*.diff; do
-        #     patch=$(echo "$patch" | tr -d '\r')
-        #     (cd ${LLAMACPP_DIR} && git apply ${patch})
-        # done
+        for patch in ../patches/*.diff; do
+            patch=$(echo "$patch" | tr -d '\r')
+            (cd ${LLAMACPP_DIR} && git apply ${patch})
+        done
     fi
 }
 
