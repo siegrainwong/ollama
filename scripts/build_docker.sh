@@ -10,7 +10,7 @@ export GOFLAGS="'-ldflags=-w -s \"-X=github.com/ollama/ollama/version.Version=$V
 # For developers, you can override the DOCKER_ORG to generate multiarch manifests
 #  DOCKER_ORG=jdoe PUSH=1 ./scripts/build_docker.sh
 DOCKER_ORG=${DOCKER_ORG:-"siegrainwong"}
-RELEASE_IMAGE_REPO=${RELEASE_IMAGE_REPO:-"${DOCKER_ORG}/release"}
+RELEASE_IMAGE_REPO=${RELEASE_IMAGE_REPO:-"${DOCKER_ORG}/ollama"}
 FINAL_IMAGE_REPO=${FINAL_IMAGE_REPO:-"${DOCKER_ORG}/ollama"}
 
 # BUILD_ARCH=${BUILD_ARCH:-"amd64 arm64"}
